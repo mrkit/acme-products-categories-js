@@ -26,15 +26,13 @@ const data = {
       "name": "",
       "id": 3
     }
-  ],
-  "": [],
-  "Big Baller Brand": []
+  ]
 }
       
 module.exports = {
   
   getCategoryNames: function(){
-  
+    
   },
   getProductsByCategory: function(){
   

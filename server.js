@@ -20,8 +20,10 @@ app.use(require('body-parser').urlencoded({extended:false}));
 app.use(require('method-override')('_method'));
 
 app.get('/', function(req, res, next){
-  res.render('index', {})
+  res.render('index', { categories: db.getCategoryNames() })
 });
+
+app.use('/categories', routes);
 
 const port = process.env.PORT || 3000;
 app.listen(port, function(){

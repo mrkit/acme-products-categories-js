@@ -6,6 +6,14 @@
   <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
+   <nav class="mainnav">
+      <ul class="nav nav-tabs">
+        <li {% if nav == 'home' %} class="active" {% endif %}><a href="/">Home</a></li>
+        <li {% if nav == 'products' %} class="active" {% endif %}><a href="/products">Products ({{ len }})</a></li>
+        <li {% if nav == 'productsDB' %} class="active" {% endif %}><a href="/products/db">Products_DB ({{ lenDB }})</a></li>
+      </ul>
+    </nav>
+
   <div class="container">
     <h1>Home</h1>
   </div>
