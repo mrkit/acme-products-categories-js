@@ -32,24 +32,24 @@ const data = {
 module.exports = {
   
   getCategoryNames: function(){
-    
+    return Object.keys(data);
   },
-  getProductsByCategory: function(){
-  
+  getProductsByCategory: function(category){
+    return data[category];
   },
-  createProduct: function(){
-    
+  createProduct: function(productName, categoryName){
+    productName.id = data[categoryName].length;
+    data[categoryName].push(productName);
   },
-  deleteProduct: function(){
-    
+  deleteProduct: function(categoryName, id){
+    data[categoryName] = data[categoryName].filter(function(product){
+        return product.id !== id;
+    })
   },
-  updateProduct: function(){
-    
+  deleteCategory: function(category){
+    delete data[category]
   },
-  deleteCategory: function(){
-    
-  },
-  createCategory: function(){
-    
+  createCategory: function(categoryName){
+    data[categoryName] = [];
   }
 }

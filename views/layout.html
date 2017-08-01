@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ACME Product Categories</title>
+  <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+
+  <nav>
+      <ul>
+          <li><a href="/">Home</a></li>
+          {% for category in categories %}
+           <li><a href="/categories/{{category}}/"></a></li>
+          {% endfor %}
+      </ul>
+  </nav>
+    {% block content %}
+     
+      <h1>Home </h1>
+      
+    {% endblock %}
+  
+</body>
+</html>

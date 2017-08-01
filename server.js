@@ -6,16 +6,19 @@ const
   nunjucks = require('nunjucks'),
   routes = require('./routes/categories');
 
-nunjucks.configure('view', {noCache: true});
-nunjucks.render('index.html', db, function(err, output){
-  if(err) return console.log(err);
-  console.log(output);
-});
+nunjucks.configure('views', {noCache: true});
+//nunjucks.render('index.html', db, function(err, output){
+//  if(err) return console.log(err);
+//  console.log(output);
+//});
 
 app.set('view engine', 'html');
 app.engine('html', nunjucks.render);
 
 app.use('/vendor', express.static(path.join(__dirname, 'node_modules')));
+
+app.use(express.static(path.join(__dirname, '/public')));
+
 app.use(require('body-parser').urlencoded({extended:false}));
 app.use(require('method-override')('_method'));
 
